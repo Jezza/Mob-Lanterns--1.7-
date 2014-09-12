@@ -7,7 +7,6 @@ public class BlockIds {
     public static final String TEXTURE_LOCATION = "lanterns";
 
     // jackolantern
-    public static int JACKOLANTERN_ID;
     public static final String JACKOLANTERN_BLOCK_NAME = "jackolantern";
     public static final String JACKOLANTERN_NAME = "Jack-O-Lantern";
     public static final String JACKOLANTERNTOP = "jackolantern1";
