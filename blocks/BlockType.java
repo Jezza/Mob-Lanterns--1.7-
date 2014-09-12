@@ -15,7 +15,7 @@ public enum BlockType {
     GHAST(BlockIds.GHAST_BLOCK_NAME, "mob.ghast.scream", BlockIds.GHASTTOP, BlockIds.GHASTFRONT,
             BlockIds.GHASTSIDE, BlockIds.GHASTSIDEACTIVE, 0),
 
-    JACKO(BlocksML.jackolantern, null, BlockIds.JACKOLANTERNTOP, BlockIds.JACKOLANTERNFRONT,
+    JACKO(BlockIds.JACKOLANTERN_BLOCK_NAME, null, BlockIds.JACKOLANTERNTOP, BlockIds.JACKOLANTERNFRONT,
             BlockIds.JACKOLANTERNSIDE, BlockIds.JACKOLANTERNFRONT, 0),
 
     MAGMA_CUBE(BlockIds.MAGMA_BLOCK_NAME, "mob.slime.attack", BlockIds.MAGMATOP, BlockIds.MAGMAFRONT,
@@ -94,4 +94,6 @@ public enum BlockType {
         this.spawnerid = spawnerid;
 
     }
+    
+    
 }

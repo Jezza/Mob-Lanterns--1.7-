@@ -10,6 +10,7 @@ import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
 @Mod(modid = Reference.ID, name = Reference.NAME, version = Reference.VERSION)
@@ -25,11 +26,12 @@ public class Lanterns {
     public void load(FMLInitializationEvent event) {
 
         BlocksML.init();
-        BlocksML.addNames();
         BlocksML.recipes();
         BlocksML.registerTileEntities();
-        LanguageRegistry.instance().addStringLocalization("itemGroup.tabMobLanterns", "en_US", "MobLanterns");
-        new GenerationHandler();
+       // LanguageRegistry.instance().addStringLocalization("itemGroup.tabMobLanterns", "en_US", "MobLanterns");
+        GameRegistry.registerWorldGenerator(new GenerationHandler(), 10);
+        
+        
     }
 
     public static CreativeTabs tabMobLanterns = new CreativeTabs("tabMobLanterns") {

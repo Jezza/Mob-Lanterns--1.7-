@@ -2,14 +2,19 @@ package com.gellegbs.lanterns.blocks;
 
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.audio.ISound;
+import net.minecraft.client.audio.SoundCategory;
+import net.minecraft.client.audio.SoundManager;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
+import net.minecraftforge.client.event.sound.PlaySoundEvent17;
 
 import com.gellegbs.lanterns.Lanterns;
+import com.gellegbs.lanterns.Reference;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -117,8 +122,8 @@ public class BlockMobLantern extends BlockDirectional {
 			if (redstoneSignal) {
 				if (!isActive) {
 					if (type.sound != null) {
-						this.ISound(type.sound, (float) x, (float) y, (float) z, (float) 1, (float) 1);
-								
+						//this.ISound(type.sound, (float) x, (float) y, (float) z, (float) 1, (float) 1);
+							
 					}
 					currentMeta = (currentMeta & 7) + 8;
 					world.setBlockMetadataWithNotify(x, y, z, currentMeta, 2);

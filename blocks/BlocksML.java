@@ -127,35 +127,9 @@ public class BlocksML {
 
     }
 
-    public static void addNames() {
-        LanguageRegistry.addName(jackolantern, BlockIds.JACKOLANTERN_NAME);
-        LanguageRegistry.addName(creeperlantern, BlockIds.CREEPER_NAME);
-        LanguageRegistry.addName(zombielantern, BlockIds.ZOMBIE_NAME);
-        LanguageRegistry.addName(skeletonlantern, BlockIds.SKELETON_NAME);
-        LanguageRegistry.addName(spiderlantern, BlockIds.SPIDER_NAME);
-        LanguageRegistry.addName(slimelantern, BlockIds.SLIME_NAME);
-        LanguageRegistry.addName(endermenlantern, BlockIds.ENDERMEN_NAME);
-        LanguageRegistry.addName(pigmenlantern, BlockIds.PIGMEN_NAME);
-        LanguageRegistry.addName(blazelantern, BlockIds.BLAZE_NAME);
-        LanguageRegistry.addName(magmacubelantern, BlockIds.MAGMA_NAME);
-        LanguageRegistry.addName(witherskeletonlantern, BlockIds.WITHERSKELE_NAME);
-        LanguageRegistry.addName(ghastlantern, BlockIds.GHAST_NAME);
-        LanguageRegistry.addName(zspawn, BlockIds.ZSPAWN_NAME);
-        LanguageRegistry.addName(blazespawn, BlockIds.BLAZESPAWN_NAME);
-        LanguageRegistry.addName(creeperspawn, BlockIds.CREEPERSPAWN_NAME);
-        LanguageRegistry.addName(endermenspawn, BlockIds.ENDERMENSPAWN_NAME);
-        LanguageRegistry.addName(ghastspawn, BlockIds.GHASTSPAWN_NAME);
-        LanguageRegistry.addName(magmaspawn, BlockIds.MAGMASPAWN_NAME);
-        LanguageRegistry.addName(pigmenspawn, BlockIds.PIGMENSPAWN_NAME);
-        LanguageRegistry.addName(slimespawn, BlockIds.SLIMESPAWN_NAME);
-        LanguageRegistry.addName(spiderspawn, BlockIds.SPIDERSPAWN_NAME);
-        LanguageRegistry.addName(skelespawn, BlockIds.SKELETONSPAWN_NAME);
-        LanguageRegistry.addName(witherskelespawn, BlockIds.WITHERSKELESPAWN_NAME);
-        LanguageRegistry.addName(witchspawn, BlockIds.WITCHSPAWN_NAME);
-        LanguageRegistry.addName(giantspawn, BlockIds.GIANTSPAWN_NAME);
-        LanguageRegistry.addName(spawnstone, BlockIds.SPAWN_STONE_NAME);
+   
 
-    }
+   
 
     public static void recipes() {
         GameRegistry.addShapelessRecipe(new ItemStack(BlocksML.jackolantern), new ItemStack(Blocks.lit_pumpkin),

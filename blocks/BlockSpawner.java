@@ -4,14 +4,17 @@ import com.gellegbs.lanterns.Lanterns;
 import com.gellegbs.lanterns.tileentities.TESpawner;
 
 import net.minecraft.block.BlockContainer;
+import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityList;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.monster.EntitySkeleton;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
@@ -45,7 +48,7 @@ public class BlockSpawner extends BlockContainer {
 
     @SideOnly(Side.CLIENT)
     @Override
-    public void registerIcons(IIconRegister register) {
+    public void registerBlockIcons(IIconRegister register) {
         topIcon = register.registerIcon(BlockIds.TEXTURE_LOCATION + ":" + type.textureTop);
         faceIcon = register.registerIcon(BlockIds.TEXTURE_LOCATION + ":" + type.textureFront);
         blockIcon = register.registerIcon(BlockIds.TEXTURE_LOCATION + ":" + type.textureSide);
@@ -71,7 +74,7 @@ public class BlockSpawner extends BlockContainer {
         return this.blockIcon;
     }
 
-    @Override
+   
     public void onNeighborBlockChange(World world, int x, int y, int z, int par5) {
         if (!world.isRemote) {
             this.updateBlock(world, x, y, z, world.getBlockMetadata(x, y, z));
@@ -95,7 +98,7 @@ public class BlockSpawner extends BlockContainer {
             if (redstoneSignal) {
                 if (!isActive) {
                     if (type.spawnerid != 0) {
-                        TESpawner spawner = (TESpawner) world.getBlockTileEntity(x, y, z);
+                        TESpawner spawner = (TESpawner) world.getTileEntity(x, y, z);
                         if (spawner.isActive()) {
                             Entity entity = EntityList.createEntityByID(type.spawnerid, world);
                             if (entity != null && entity instanceof EntityLivingBase) {
@@ -104,16 +107,16 @@ public class BlockSpawner extends BlockContainer {
                                         MathHelper.wrapAngleTo180_float(world.rand.nextFloat() * 360.0F), 0.0F);
                                 entityliving.rotationYawHead = entityliving.rotationYaw;
                                 entityliving.renderYawOffset = entityliving.rotationYaw;
-                                entityliving.onSpawnWithEgg((EntityLivingData) null);
+                                entityliving.onSpawnWithEgg((IEntityLivingData) null);
                                 world.spawnEntityInWorld(entity);
                                 entityliving.playLivingSound();
                                 // wither skeleton related stuff
                                 if (type == BlockType.WITHERSKELESPAWN && (entityliving instanceof EntitySkeleton)) {
                                     EntitySkeleton skeleton = (EntitySkeleton) entityliving;
                                     skeleton.setSkeletonType(1);
-                                    skeleton.setCurrentItemOrArmor(0, new ItemStack(Item.swordStone));
+                                    skeleton.setCurrentItemOrArmor(0, new ItemStack(Items.stone_sword));
                                     skeleton.getEntityAttribute(SharedMonsterAttributes.attackDamage)
-                                            .setAttribute(4.0D);
+                                            .setBaseValue(4.0D);
                                 }
                                 spawner.decreaseUsage();
                             }
@@ -129,15 +132,13 @@ public class BlockSpawner extends BlockContainer {
             }
         }
     }
-
+    
     @Override
-    public TileEntity createNewTileEntity(World world) {
-        return new TESpawner();
-    }
+    public TileEntity createNewTileEntity(World world, int n){
+	   return new TESpawner();
+	   
+   }
+  
 
-	@Override
-	public TileEntity createNewTileEntity(World p_149915_1_, int p_149915_2_) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 }
