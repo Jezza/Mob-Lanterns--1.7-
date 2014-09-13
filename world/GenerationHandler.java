@@ -31,7 +31,7 @@ public class GenerationHandler implements IWorldGenerator {
     }
     
     public void generateOverworld(Random rand, World world, int x, int z){
-    	addOres(BlocksML.spawnstone, world, rand, x, z, 1, 2, 5, 32, 60);
+    	addOres(BlocksML.spawnstone, world, rand, x, z, 1, 2, 10, 32, 60);
     }
     
     public void addOres(Block block, World world, Random rand, int blockXPos, int blockZPos, int minVeinSize, int maxVeinSize, int chanceToSpawn, int minY, int maxY ){

@@ -28,7 +28,6 @@ public class Lanterns {
         BlocksML.init();
         BlocksML.recipes();
         BlocksML.registerTileEntities();
-       // LanguageRegistry.instance().addStringLocalization("itemGroup.tabMobLanterns", "en_US", "MobLanterns");
         GameRegistry.registerWorldGenerator(new GenerationHandler(), 10);
         
         

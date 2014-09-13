@@ -76,7 +76,7 @@ public class BlocksML {
         GameRegistry.registerBlock(witherskeletonlantern, BlockIds.WITHERSKELE_NAME);
 
         ghastlantern = new BlockMobLantern(BlockType.GHAST).setBlockName(BlockIds.GHAST_BLOCK_NAME);
-        GameRegistry.registerBlock(ghastlantern, BlockIds.BLAZE_NAME);
+        GameRegistry.registerBlock(ghastlantern, BlockIds.GHAST_NAME);
 
         zspawn = new BlockSpawner(BlockType.ZOMBIESPAWN).setBlockName(BlockIds.ZSPAWN_BLOCK_NAME);
         GameRegistry.registerBlock(zspawn, BlockIds.ZSPAWN_NAME);

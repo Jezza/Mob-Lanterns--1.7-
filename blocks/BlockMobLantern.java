@@ -1,20 +1,19 @@
 package com.gellegbs.lanterns.blocks;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.audio.ISound;
-import net.minecraft.client.audio.SoundCategory;
-import net.minecraft.client.audio.SoundManager;
 import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.init.Blocks;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
-import net.minecraftforge.client.event.sound.PlaySoundEvent17;
 
 import com.gellegbs.lanterns.Lanterns;
-import com.gellegbs.lanterns.Reference;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -22,6 +21,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 public class BlockMobLantern extends BlockDirectional {
 	
 	private BlockType type;
+	private CreativeTabs displayOnCreativeTab;
 
 	public BlockMobLantern(BlockType type) {
 		super(Material.gourd);
@@ -33,7 +33,6 @@ public class BlockMobLantern extends BlockDirectional {
 
 	// icon junk
 
-	
 
 	@SideOnly(Side.CLIENT)
 	private IIcon topIcon;
@@ -76,6 +75,7 @@ public class BlockMobLantern extends BlockDirectional {
 		return this.blockIcon;
 	}
 
+	
 	@Override
 	public void onBlockPlacedBy(World world, int x, int y, int z,
 			EntityLivingBase entity, ItemStack itemstack) {

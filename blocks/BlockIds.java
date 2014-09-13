@@ -177,10 +177,10 @@ public class BlockIds {
     public static final String WITCHSPAWN_SIDE = "witchspawn_side";
 
  
-    public static final String GIANTSPAWN_BLOCK_NAME = "witchspawn";
-    public static final String GIANTSPAWN_NAME = "Witch Spawn Block";
-    public static final String GIANTSPAWN_TOP = "witchspawn_top";
-    public static final String GIANTSPAWN_SIDE = "witchspawn_side";
+    public static final String GIANTSPAWN_BLOCK_NAME = "giantspawn";
+    public static final String GIANTSPAWN_NAME = "Giant Spawn Block";
+    public static final String GIANTSPAWN_TOP = "giantspawn_top";
+    public static final String GIANTSPAWN_SIDE = "giantspawn_side";
 
     // others
 
