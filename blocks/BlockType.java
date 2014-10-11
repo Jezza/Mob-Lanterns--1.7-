@@ -79,6 +79,9 @@ public enum BlockType {
 
     GIANTSPAWN(BlockIds.GIANTSPAWN_BLOCK_NAME, null, BlockIds.GIANTSPAWN_TOP, BlockIds.GIANTSPAWN_SIDE,
             BlockIds.GIANTSPAWN_SIDE, BlockIds.GIANTSPAWN_SIDE, 53);
+    
+ 
+    
 
     public final String unlocalizedName, sound, textureTop, textureFront, textureSide, textureSideActive;
     public int spawnerid;

@@ -5,6 +5,7 @@ import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
@@ -122,7 +123,7 @@ public class BlockMobLantern extends BlockDirectional {
 			if (redstoneSignal) {
 				if (!isActive) {
 					if (type.sound != null) {
-						//this.ISound(type.sound, (float) x, (float) y, (float) z, (float) 1, (float) 1);
+						this.playSound(type.sound);
 							
 					}
 					currentMeta = (currentMeta & 7) + 8;
@@ -135,4 +136,8 @@ public class BlockMobLantern extends BlockDirectional {
 			}
 		}
 	}
+	
+	
+	 
+
 }

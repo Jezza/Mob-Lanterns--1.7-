@@ -39,6 +39,7 @@ public class BlocksML {
     public static Block spawnstone;
     public static Block witchspawn;
     public static Block giantspawn;
+   
 
     public static void init() {
 
@@ -119,6 +120,7 @@ public class BlocksML {
 
         spawnstone = new SpawnStone(spawnstone).setBlockName(BlockIds.SPAWN_STONE_BLOCK_NAME);
         GameRegistry.registerBlock(spawnstone, BlockIds.SPAWN_STONE_NAME);
+        
 
     }
 
