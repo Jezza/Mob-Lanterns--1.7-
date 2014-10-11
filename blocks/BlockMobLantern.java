@@ -20,7 +20,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockMobLantern extends BlockDirectional {
-	
+
 	private BlockType type;
 	private CreativeTabs displayOnCreativeTab;
 
@@ -32,9 +32,7 @@ public class BlockMobLantern extends BlockDirectional {
 		this.setBlockName(this.type.unlocalizedName);
 	}
 
-	 public World worldObj;
 	// icon junk
-
 
 	@SideOnly(Side.CLIENT)
 	private IIcon topIcon;
@@ -44,7 +42,6 @@ public class BlockMobLantern extends BlockDirectional {
 	private IIcon blockIcon;
 	@SideOnly(Side.CLIENT)
 	private IIcon activeFaceIcon;
-
 
 	@SideOnly(Side.CLIENT)
 	@Override
@@ -62,47 +59,52 @@ public class BlockMobLantern extends BlockDirectional {
 	@SideOnly(Side.CLIENT)
 	@Override
 	public IIcon getIcon(int side, int metadata) {
-		
+
 		if (side == 0 || side == 1) {
 			return this.topIcon;
 		}
-		
-		// metadata holds the block side with the face on in the lower 3 bits (0xxx),
+
+		// metadata holds the block side with the face on in the lower 3
+		// bitscccccccccccccccccccccccccccccccccccc
 		// and if its active or not in the highest bit. (x000)
 		if ((metadata & 7) == side) {
 			boolean isActive = (metadata & 8) > 0;
 			return (isActive) ? this.activeFaceIcon : this.faceIcon;
 		}
-		
+
 		return this.blockIcon;
 	}
 
-	
 	@Override
 	public void onBlockPlacedBy(World world, int x, int y, int z,
 			EntityLivingBase entity, ItemStack itemstack) {
 		int whichDirectionFacing = MathHelper
 				.floor_double((double) (entity.rotationYaw * 4.0F / 360.0F) + 2.5D) & 3;
-		
-		// map the facing to the block side with the face and store it as metadata.
+
+		// map the facing to the block side with the face and store it as
+		// metadata.
 		// mapping is as follows: Facing -> BlockSideWithFace
-		//                             0 -> 3
-		//                             1 -> 4
-		//                             2 -> 2
-		//                             3 -> 5
+		// 0 -> 3
+		// 1 -> 4
+		// 2 -> 2
+		// 3 -> 5
 		//
 		// we just check against 0,1 and 3 as 2 would be fine by itself.
 		int blockSideWithFace = whichDirectionFacing;
-		if (whichDirectionFacing == 0) blockSideWithFace = 3;
-		else if (whichDirectionFacing == 1) blockSideWithFace = 4;
-		else if (whichDirectionFacing == 3) blockSideWithFace = 5;
-		
+		if (whichDirectionFacing == 0)
+			blockSideWithFace = 3;
+		else if (whichDirectionFacing == 1)
+			blockSideWithFace = 4;
+		else if (whichDirectionFacing == 3)
+			blockSideWithFace = 5;
+
 		world.setBlockMetadataWithNotify(x, y, z, blockSideWithFace, 2);
 		this.updateBlock(world, x, y, z, blockSideWithFace);
 	}
 
-
-	public void onNeighborBlockChange(World world, int x, int y, int z, int par5) {
+	@Override
+	public void onNeighborBlockChange(World world, int x, int y, int z,
+			Block par5) {
 		if (!world.isRemote) {
 			this.updateBlock(world, x, y, z, world.getBlockMetadata(x, y, z));
 		}
@@ -114,32 +116,31 @@ public class BlockMobLantern extends BlockDirectional {
 			this.updateBlock(world, x, y, z, world.getBlockMetadata(x, y, z));
 		}
 	}
-	
-	
+
 	public void updateBlock(World world, int x, int y, int z, int currentMeta) {
 		if (!world.isRemote) {
 			boolean isActive = (currentMeta & 8) > 0;
-			boolean redstoneSignal = world.isBlockIndirectlyGettingPowered(x, y, z);
-			
+
+			boolean redstoneSignal = world.isBlockIndirectlyGettingPowered(x,
+					y, z);
+
 			if (redstoneSignal) {
 				if (!isActive) {
 					if (type.sound != null) {
+
 						world.playSoundEffect(x, y, z, type.sound, 1f, 1f);
-							
 					}
 					currentMeta = (currentMeta & 7) + 8;
-					world.setBlockMetadataWithNotify(x, y, z, currentMeta, 2);
+					world.setBlockMetadataWithNotify(x, y, z, currentMeta, 3);
 				}
 			} else {
 				if (isActive) {
-					world.setBlockMetadataWithNotify(x, y, z, (currentMeta & 7), 2);
+					world.setBlockMetadataWithNotify(x, y, z,
+							(currentMeta & 7), 3);
 				}
 			}
 		}
-		
-		   
+
 	}
-	
-	
-	
+
 }

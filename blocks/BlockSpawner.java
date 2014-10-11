@@ -1,10 +1,7 @@
 package com.gellegbs.lanterns.blocks;
 
-import com.gellegbs.lanterns.Lanterns;
-import com.gellegbs.lanterns.tileentities.TESpawner;
-
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
-import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.Entity;
@@ -15,12 +12,15 @@ import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.monster.EntitySkeleton;
 import net.minecraft.init.Items;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IIcon;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
+
+import com.gellegbs.lanterns.Lanterns;
+import com.gellegbs.lanterns.tileentities.TESpawner;
+
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -75,7 +75,7 @@ public class BlockSpawner extends BlockContainer {
     }
 
    
-    public void onNeighborBlockChange(World world, int x, int y, int z, int par5) {
+    public void onNeighborBlockChange(World world, int x, int y, int z, Block par5) {
         if (!world.isRemote) {
             this.updateBlock(world, x, y, z, world.getBlockMetadata(x, y, z));
         }
