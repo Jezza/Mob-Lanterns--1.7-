@@ -6,7 +6,7 @@ public enum BlockType {
     BLAZE(BlockIds.BLAZE_BLOCK_NAME, "mob.blaze.breathe", BlockIds.BLAZETOP, BlockIds.BLAZEFRONT,
             BlockIds.BLAZESIDE, BlockIds.BLAZESIDEACTIVE, 0),
 
-    CREEPER(BlockIds.CREEPER_BLOCK_NAME, "random.fuse", BlockIds.CREEPERTOP, BlockIds.CREEPERFRONT,
+    CREEPER(BlockIds.CREEPER_BLOCK_NAME, "creeper.primed", BlockIds.CREEPERTOP, BlockIds.CREEPERFRONT,
             BlockIds.CREEPERSIDE, BlockIds.CREEPERSIDEACTIVE, 0),
 
     ENDERMEN(BlockIds.ENDERMEN_BLOCK_NAME, "mob.endermen.stare", BlockIds.ENDERMENTOP, BlockIds.ENDERMENFRONT,

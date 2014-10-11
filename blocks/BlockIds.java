@@ -143,8 +143,8 @@ public class BlockIds {
     // pigmen spawn block
     public static final String PIGMENSPAWN_BLOCK_NAME = "pigmenspawn";
     public static final String PIGMENSPAWN_NAME = "Pigmen Spawn Block";
-    public static final String PIGMENSPAWNTOP = "pigmen_top";
-    public static final String PIGMENSPAWNSIDE = "pigmen_side";
+    public static final String PIGMENSPAWNTOP = "pigmenspawn_top";
+    public static final String PIGMENSPAWNSIDE = "pigmenspawn_side";
 
     // blaze spawn block
     public static final String BLAZESPAWN_BLOCK_NAME = "blazespawn";
