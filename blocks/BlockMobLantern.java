@@ -32,6 +32,7 @@ public class BlockMobLantern extends BlockDirectional {
 		this.setBlockName(this.type.unlocalizedName);
 	}
 
+	 public World worldObj;
 	// icon junk
 
 
@@ -123,7 +124,7 @@ public class BlockMobLantern extends BlockDirectional {
 			if (redstoneSignal) {
 				if (!isActive) {
 					if (type.sound != null) {
-						this.playSound(type.sound);
+						world.playSoundEffect(x, y, z, type.sound, 1f, 1f);
 							
 					}
 					currentMeta = (currentMeta & 7) + 8;
@@ -135,9 +136,10 @@ public class BlockMobLantern extends BlockDirectional {
 				}
 			}
 		}
+		
+		   
 	}
 	
 	
-	 
-
+	
 }
