@@ -27,14 +27,14 @@ public class GenerationHandler implements IWorldGenerator {
 	}
 
 	public void generateOverworld(Random rand, World world, int x, int z) {
-		addOres(BlocksML.spawnstone, world, rand, x, z, 5, 10, 10, 70, 120);
+		addOres(BlocksML.spawnstone, world, rand, x, z, 1, 4, 17, 35, 60);
 	}
 
 	public void addOres(Block block, World world, Random rand, int blockXPos,
 			int blockZPos, int minVeinSize, int maxVeinSize, int chanceToSpawn,
 			int minY, int maxY) {
 		WorldGenMinable mineable = new WorldGenMinable(block, minVeinSize
-				+ rand.nextInt(maxVeinSize - minVeinSize), Blocks.air);
+				+ rand.nextInt(maxVeinSize - minVeinSize), Blocks.stone);
 		for (int i = 0; i < chanceToSpawn; i++) {
 			int posX = blockXPos + rand.nextInt(15);
 			int posZ = blockZPos + rand.nextInt(15);
