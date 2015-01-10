@@ -1,0 +1,29 @@
+itemGroup.moblanterns=Mob Lanterns
+
+tile.jackoLantern.name=Jack-O-Lantern
+tile.creeperLantern.name=Creeper Lantern
+tile.zombieLantern.name=Zombie Lantern
+tile.skeletonLantern.name=Skeleton Lantern
+tile.spiderLantern.name=Spider Lantern
+tile.slimeLantern.name=Slime Lantern
+tile.endermenLantern.name=Endermen Lantern
+tile.pigmenLantern.name=Pigmen Lantern
+tile.blazeLantern.name=Blaze Lantern
+tile.magmaCubeLantern.name=Magma Cube Lantern
+tile.witherSkeletonLantern.name=Wither Skeleton Lantern
+tile.ghastLantern.name=Ghast Lantern
+tile.creeperSpawn.name=Creeper Spawnstone
+tile.zombieSpawn.name=Zombie Spawnstone
+tile.skeletonSpawn.name=Skeleton Spawnstone
+tile.spiderSpawn.name=Spider Spawnstone
+tile.slimeSpawn.name=Slime Spawnstone
+tile.endermenSpawn.name=Endermen Spawnstone
+tile.pigmenSpawn.name=Pigmen Spawnstone
+tile.blazeSpawn.name=Blaze Spawnstone
+tile.magmaCubeSpawn.name=Magma Cube Spawnstone
+tile.witherSkeletonSpawn.name=Wither Skeleton Spawnstone
+tile.ghastSpawn.name=Ghast Spawnstone
+
+tile.witchSpawn.name=Witch Spawnstone
+tile.giantSpawn.name=Giant Spawnstone
+tile.spawnStone.name=Spawnstone
