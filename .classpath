@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="/Mob-Lanterns/src"/>
+	<classpathentry kind="src" path="/Mob-Lanterns/resources"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/forge"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
